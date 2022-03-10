@@ -1,0 +1,19 @@
+version: 0.2
+
+phases:
+    install:
+        runtime-versions:
+            nodejs: 10
+        commands:
+            - echo "installing something"
+pre_build:
+    commands:
+        - echo "Nothing to do in the pre_build phase"
+build:
+    commands:
+        - echo "we are in build phase"
+        - echo "Build started on"
+        - grep -Fq "congradulations" index.html
+post_build:
+    commands:
+        - echo "we are in the post bild build phase"
